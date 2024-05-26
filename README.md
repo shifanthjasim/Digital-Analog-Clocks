@@ -1,0 +1,1 @@
+Experience the passage of time in style with this elegant clock project, featuring both analog and digital displays. Crafted using HTML, CSS, and JavaScript, this repository showcases the beauty of timekeeping through sophisticated design and seamless functionality.
