@@ -1,0 +1,250 @@
+/* styles.css */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap');
+
+body, html {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 120%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(135deg, #1d2b64, #f8cdda);
+    font-family: 'Roboto', sans-serif;
+    color: white;
+    overflow: hidden;
+    text-align: center;
+}
+
+header {
+    font-size: 32px;
+    font-weight: 700;
+    margin-bottom: 20px;
+    transition: color 0.3s, text-shadow 0.3s;
+}
+
+header:hover {
+    color: #ff8c00;
+    text-shadow: 0 5px 15px rgba(0, 0, 0, 0.7), 0 0 10px #ff8c00;
+}
+
+.clock-container {
+    background-color: rgba(0, 0, 0, 0.6);
+    padding: 60px 80px;
+    border-radius: 30px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(15px);
+    text-align: center;
+    animation: fadeIn 2s ease-out;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    position: relative;
+}
+
+#digital-clock {
+    display: none;
+}
+
+#analog-clock {
+    display: none;
+    width: 200px; /* Adjusted size */
+    height: 200px; /* Adjusted size */
+}
+
+.clock-face {
+    width: 100%;
+    height: 100%;
+    border: 5px solid white; /* Adjusted border thickness */
+    border-radius: 50%;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: radial-gradient(circle, #1d2b64, #000);
+}
+
+.hand {
+    position: absolute;
+    background: white;
+    transform-origin: 0 50%;
+}
+
+.hour-hand {
+    width: 35%; /* Adjusted hand length */
+    height: 6px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.minute-hand {
+    width: 45%; /* Adjusted hand length */
+    height: 4px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.second-hand {
+    width: 50%; /* Adjusted hand length */
+    height: 2px;
+    background: #ff8c00;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 1; /* Ensure the second hand appears above other hands */
+}
+
+#clock {
+    font-size: 120px;
+    font-weight: 700;
+    text-shadow: 0 5px 15px rgba(0, 0, 0, 0.7);
+    letter-spacing: 5px;
+    animation: glow 1.5s ease-in-out infinite alternate;
+    transition: color 0.3s, text-shadow 0.3s;
+}
+
+#clock:hover {
+    color: #ff8c00;
+    text-shadow: 0 5px 15px rgba(0, 0, 0, 0.7), 0 0 20px #ff8c00, 0 0 30px #ff8c00;
+}
+
+#hover-text {
+    font-size: 24px;
+    font-weight: 400;
+    margin-top: 20px;
+    opacity: 0;
+    transition: opacity 0.3s;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+#clock:hover + #hover-text {
+    opacity: 1;
+}
+
+.button-container {
+    margin-top: 20px;
+}
+
+button {
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    color: white;
+    background-color: #1d2b64;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 0 10px;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #ff8c00;
+}
+
+.description, .how-to-use {
+    margin-top: 10px; /* Adjusted margin */
+}
+
+.description h2, .how-to-use h2 {
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.description p, .how-to-use p {
+    font-size: 14px;
+    line-height: 1.5;
+}
+}
+
+footer {
+    margin-top: 40px;
+    font-size: 14px;
+}
+
+footer p {
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.footer-text {
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 14px;
+}
+
+.footer-text:hover {
+    color: #ff8c00;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+@keyframes glow {
+    from {
+        text-shadow: 0 5px 15px rgba(0, 0, 0, 0.7), 0 0 10px #ffffff, 0 0 20px #ffffff;
+    }
+    to {
+        text-shadow: 0 5px 15px rgba(0, 0, 0, 0.7), 0 0 20px #ff8c00, 0 0 30px #ff8c00;
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .clock-container {
+        padding: 40px 60px;
+    }
+
+    #clock {
+        font-size: 80px;
+        letter-spacing: 3px;
+    }
+
+    #hover-text {
+        font-size: 20px;
+    }
+
+    header {
+        font-size: 24px;
+    }
+
+    .clock-face {
+        width: 150px;
+        height: 150px;
+    }
+}
+
+@media (max-width: 480px) {
+    .clock-container {
+        padding: 20px 40px;
+    }
+
+    #clock {
+        font-size: 60px;
+        letter-spacing: 2px;
+    }
+
+    #hover-text {
+        font-size: 16px;
+    }
+
+    header {
+        font-size: 18px;
+    }
+
+    .clock-face {
+        width: 100px;
+        height: 100px;
+    }
+}
